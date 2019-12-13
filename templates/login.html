@@ -1,0 +1,25 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Login here</title>
+<link href="{{ url_for('static', filename='css/login.css')}}" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Geneva" rel="stylesheet">
+</head>
+
+<body>
+   <div class="mysignin">
+
+<form name="login" action="/dashboard" method="post">
+<h2 style="color:#fff;">Admin Log In</h2>
+<input type="text" name="uname" placeholder="Username"/><br /><br />
+<input type="password" name="pass" placeholder="Password"/><br /><br />
+<a href="/password">
+   <input type="Submit" value="Click Here" /></a><br /><br />
+<div id="container">
+
+</form>
+<p>&copy; Coder's Blog | 2019</p>
+</div>
+
+</body>
+</html>

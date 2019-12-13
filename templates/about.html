@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+{% block body %}
+<style>
+    .bg {
+  background: url(https://images.unsplash.com/photo-1505487985217-c1f95816212d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6491055a75d8ffa83dd072e10ac557a8&auto=format&fit=crop&w=1600&q=80);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#content {
+  text-align: center;
+  padding-top: 35%;
+  padding-bottom: 10%;
+}
+
+#about, #portfolio, #contact, .skills {
+  padding-top: 65px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 43px;
+  text-align: center;
+}
+
+.sub {
+  font-size: 22px;
+  text-align: center;
+  font-weight: 600;
+  color: aliceblue;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 22px;
+  text-align: justify;
+  color: #727275
+}
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    width: 400px;
+    max-width: 90%;
+}
+
+ .fa-twitter {
+  color: #554659;
+}
+ .fa-twitter, .fa-github, .fa-linkedin, .fa-free-code-camp {
+  color: #554659;
+}
+ .fa-twitter {
+  color: #554659;
+}
+ .fa-twitter {
+  color: #554659;
+}
+
+.description {
+  text-align: center;
+}
+</style>
+<header>
+    <div class="container-fluid bg">
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="content">
+                <p class="sub">Programmed and Designed by </p>
+            <h1>Ashutosh Ranjan | 1GA16CS033</h1>
+            <hr>
+
+            <a href="https://twitter.com/ashutosh_sam" class="btn btn-default btn-sm" role="button" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="https://github.com/i-ashu" class="btn btn-default btn-sm" role="button" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            <a href="https://www.linkedin.com/in/definition.a" class="btn btn-default btn-sm" role="button" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ABOUT SECTION -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-xs-12">
+        <h2 id="about">About Us</h2>
+        <p>
+          Hey There! At first, Thank you for visiting this Blog website. The sole purpose of this website is to provide content to programmers as this is personal blog. 
+        </p>
+        <p>
+          We made this website for College's Web Mini Project under the guidance of Mrs. Sushmitha S, Mr. Shyam Sundar Bhusan. 
+        </p>
+        <p>
+          This project is still under developement phase and we love to work more on this. We also want to deploy it on cloud and thus it'll serve the community.
+        </p>
+      </div>
+      </div>
+      </div>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block body %}
+    <!-- Page Header -->
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading"><br><br><br>
+              <h1 style="text-align: center; font-size: 42px; font-weight: bold; ">Admin Panel</h1>
+              <hr><hr>
+              <h1 class="subheading">Manage Posts</h1>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <script src="//cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+          <h2>Basic Actions</h2>
+          
+           <a href="/dashboard">  <button class="btn btn-outline-primary"> Dashboard Home</button></a>
+           <a href="/logout">  <button class="btn btn-outline-primary"> Logout</button></a>
+           <hr>
+<h2>Add/Edit Post</h2>
+
+
+ <form name="sentMessage" id="contactForm" action = "/edit/{{sno}}" method="post" novalidate>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Title</label>
+                <input class="form-control" placeholder="Title" id="title" name="title" value="{{post.title}}" required="required">
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Author</label>
+                <input class="form-control" placeholder="Posted by" id="postedby" name="postedby" value="{{post.author}}" required="required">
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Post Slug</label>
+                <input class="form-control" placeholder="Slug" required name="slug" id="slug" value="{{post.slug}}" required="required">
+                
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Image File</label>
+                <input class="form-control" placeholder="Image Filename" name = "img_file" id="img_file" value="{{post.img_file}}" required="required">
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Post Content</label>
+                <textarea rows="5" class="form-control ckeditor" style="border-radius: 13px;" placeholder="Content" name = "content" id="long_desc" required="required">{{post.content}}</textarea>
+              </div>
+            </div>
+            <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-outline-primary" id="sendMessageButton">Publish</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    {% endblock %}

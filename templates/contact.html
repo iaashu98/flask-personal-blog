@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block body %}
+<br>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+<div class="container contact">
+	<div class="row" style="border: 3px solid #25274d; border-radius: 15px;">
+		<div class="col-md-3">
+			<div class="contact-info">
+				<h2>Contact Us</h2>
+				<h4>We would love to hear from you !</h4>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div class="contact-form">
+				<form method="post" action="/contact">
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="fname">Name:</label>
+				  <div class="col-sm-10">          
+					<input class="form-control" id="fname" placeholder="Enter Your Name" name="name">
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="email">Email:</label>
+				  <div class="col-sm-10">
+					<input class="form-control" id="email" placeholder="Enter Your email" name="email">
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="lname">Phone:</label>
+				  <div class="col-sm-10">          
+					<input class="form-control" id="phone" placeholder="Enter Your Phone" name="phone">
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="comment">Message:</label>
+				  <div class="col-sm-10">
+					<textarea class="form-control" rows="5" id="comment" name="message" placeholder="Type Your Message"></textarea>
+				  </div>
+				</div>
+				<div class="form-group">        
+				  <div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default">Submit</button>
+				  </div>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+{%endblock%}

@@ -1,0 +1,338 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:500);
+@import url("https://use.fontawesome.com/releases/v5.8.2/css/all.css");
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One|Lobster|PT+Sans:400,400i,700,700i&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+}
+/*Nav bar Styling start*/
+.wrapper{
+	width: 100%; 
+}
+
+
+.logo {
+    line-height: 60px;
+    position: fixed;
+    float: left;
+    margin: 0px 46px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 29px;
+    font-family: 'Do Hyeon', sans-serif;
+    letter-spacing: 2px;
+}
+.logo a:hover{
+  background-color: white !important;
+  color: black;
+  padding: 2px 12px;
+  transition: ease-in-out 700ms all;
+  text-decoration: none;
+}
+span{
+	color: #e4cb58;
+}
+nav {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+	 background-color: black;
+}
+
+nav ul {
+    line-height: 60px;
+    list-style: none;
+    background: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    color: #fff;
+    text-align: right;
+    margin: 0;
+    padding-right: 40px;
+    transition: 1s;
+}
+
+nav.black ul {
+    background: #000;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 0px 36px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Fjalla One', sans-serif;
+}
+nav li a:hover{
+  background-color: white !important;
+  color: black;
+  padding: 2px 12px;
+  transition: ease-in-out 700ms all;
+  text-decoration: none;
+}
+
+.menu-icon {
+    line-height: 60px;
+    width: 100%;
+    background: #000;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 15px 24px;
+    cursor: pointer;
+    color: #fff;
+    display: none;
+}
+ aside {
+    z-index: 100;
+    position: fixed;
+    margin-left: 5px;
+  }
+  #searchbox{
+    border-radius: 4px;
+    border: 2px solid rgb(2,117,216);
+    margin-bottom: 7px;
+    margin-left: 7px;
+    padding-left: 7px;
+    height: 39px;
+    width: 220px;
+  }
+/* Navbar Styling end */
+
+/* Blog Content Styling start */
+.cool-card{
+	width: 960px;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+
+p, ul, h3{
+  font-family: 'Roboto',sans-serif;
+  font-weight: 200;
+  color: #394246;
+}
+section p{
+  text-align: justify;
+  text-justify: inter-word;
+}
+a{
+  color: #394246;
+  text-decoration: none;
+}
+article {
+  margin-top: 1.5em;
+}
+
+.card {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #333;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.card-image {
+  display: block;
+  -webkit-flex: 1 0 50%;
+  -ms-flex: 1 0 50%;
+  flex: 1 0 50%;
+  min-height: 260px;
+  background-position: center;
+  background-size: cover;
+  background-color: #ccc;
+}
+
+.card-body{
+  font-weight: 600;
+}
+
+.card-content1 {
+  display: block;
+  -webkit-flex: 1 0 50%;
+  -ms-flex: 1 0 50%;
+  flex: 1 0 47%;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
+.card-content1 {
+  padding: 1.5em 1em 1.5em 1.5em;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.card-subtitle-new {
+  font-family:'Open Sans', sans-serif;
+  font-size: 12px;
+  color: #66CCCC;
+  margin: 0;
+  margin-bottom: 2px;
+  padding: 0;
+  font-weight: 200;
+}
+
+.card-header {
+  font-family: 'Secular One', sans-serif;
+  font-weight: 900;
+  font-size: 27px; 
+  color: #333;
+}
+
+.card-header a {
+  color: #333;
+  text-decoration: none;
+  transition: ease 500ms all;
+}
+
+.card-header a:hover {
+  color: #666;
+  text-decoration: none;
+}
+
+.card-body {
+  font-family:'Varela', sans-serif;
+  display: block;
+}
+
+/* Blog Content Styling End */
+
+/*footer*/
+#footer{
+	font-size: 16px;
+	color: white;
+  width:100%;
+  height: 100px;
+  padding: 20px;
+  text-align: center;
+  bottom:0;
+  left:0;
+ background-color: #2A242E;
+ background-size: cover;
+ text-decoration: none;
+}
+ 
+ /*Contact section*/
+
+  .contact{
+    padding: 4%;
+    height: 718px;
+  }
+  .col-md-3{
+    background: #ff9b00;
+    padding: 4%;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border:2px solid #888888;
+  }
+  .contact-info{
+    margin-top:10%;
+  }
+  .contact-info img{
+    margin-bottom: 15%;
+  }
+  .contact-info h2{
+    margin-bottom: 10%;
+  }
+  .col-md-9{
+    background: #fff;
+    padding: 3%;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+  .contact-form label{
+    font-weight:600;
+  }
+  .contact-form button{
+    background: #25274d;
+    color: #fff;
+    font-weight: 600;
+    width: 25%;
+  }
+  .contact-form button:hover{
+    box-shadow:none;
+    color: white;
+    border: 1px solid #888888;
+  }
+
+
+/*content page*/
+
+.blog-page{
+    font: 20px/1.6 'PT Sans', sans-serif;
+    margin-top: 25px;
+    padding: 0px;
+    color: #000;
+    box-sizing: border-box;
+
+}
+
+h2.h2 {
+  font-size: 40px;
+  font-family: 'Fjalla+One', sans-serif;
+  font-weight: 600;
+}
+main.theme-standard {
+    max-width: 53rem;
+    margin: auto;
+}
+blog-content p{
+    padding-bottom: 20px;
+    text-align: justify;
+    color: black;
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    text-decoration: none;
+}
+.blog-content-date{
+  font-family: sans-serif;
+}
+.content-img{
+    width: 53rem;
+    height: 490px;
+    margin-bottom: 1em;
+}
+
+section.section-standard {
+    display: inline-block;
+    border: none;
+    border-radius: 15px;
+    width: 53rem;
+    height: 30px;
+    margin: 1em auto;
+    background-color: #7c7c7c;
+    text-align: left;
+}
+
+header {
+    text-align: center;
+}
+ /*Comment section*/
+.controls{
+  text-align: left;
+  position: relative;
+}
+  input[type="text"],
+  input[type="email"],
+  textarea,
+  select{
+    padding: 12px;
+    border: 1px solid rgb(31, 30, 30);
+    width: 100%;
+    margin-bottom: 18px;
+    color: #888;
+    font-family: 'Lato', 'sans-serif';
+    font-size: 12px;
+    font-weight: 300;
+    background-color: #fff;
+    border-radius:4px;
+    transition:all .3s;
+    border-radius: 9px;
+}

@@ -1,0 +1,78 @@
+body
+{
+    font-family: 'Geneva', sans-serif;
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(326deg, #5f0a87 0%, rgba(29, 40, 129, 0.8) 0%);
+    background-size: cover;
+}
+.mysignin
+{
+    background: rgba(44,62,80,0.7);
+    padding: 40px;
+    width: 250px;
+    margin: auto;
+    margin-top: 230px;
+    height: 300px;
+    margin-left: 180x;
+    border-radius: 10px;
+    
+}
+form
+{
+    width: 240px;
+    text-align: center;
+}
+input
+{
+    width: 240px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-family: 'Play', sans-serif;
+    font-size: 19px;
+    font-weight: 200px;
+    padding: 10px 0;
+    transition: border 0.5s;
+    outline: none;
+    color: #fff;
+}
+input[type=Submit]
+{
+    border: none;
+    width: 190px;
+    background: white;
+    color: #000;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 10px 0;
+    border-radius: 15px;
+    cursor: pointer;
+}
+input[type=Submit]:hover
+{
+    color: #fff;
+    background-color:#03a9f4;
+}
+h2
+{
+    color: white;
+    
+}
+a
+{
+    color: yellow;
+    text-decoration: blink;
+}
+a:hover
+{
+    color: skyblue;
+}
+.container
+{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+

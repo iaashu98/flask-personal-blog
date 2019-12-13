@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>{{params.blog_name}}</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+     <header>
+      <nav>
+         <div class="logo"><a href="/">Coder's <span>Blog</span></a></div>
+        <div class="menu">
+              <ul>
+                 <li><a href="/">Home</a></li>
+                 <li><a href="/about">About</a></li>
+                 <li><a href="/contact">Contact</a></li>
+              </ul>
+           </div>
+        </nav>
+     </header>
+  </div>
+<body>
+   <header>
+   	<br><br>
+   </header>
+   <main class="theme-standard">
+      <article class="blog-page">
+         <h2 class="h2 text-uppercase"><a href="/" style="text-decoration: none;">{{post.title}}</a></h2>
+         <p class="blog-content-date" style="font-size: 15px;">Posted by <span style="font-weight: 500; color: green;">{{post.author}}</span> On <i style="color: darkgrey;">{{post.date.strftime('%b %d, %Y')}}</i>
+          <span style="display: flex; float: right; color: rgb(15, 11, 19); font-size: 17px; font-weight: 600;"><i class="far fa-eye"> {{post.views}}</i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="far fa-comment-dots"> {{post.countcomm}}</i></span></p>
+         <hr>
+         <section class="blog-content">
+            {% set fname = 'posts_img/' + post.img_file %}
+            <img class="content-img" src="{{ url_for('static', filename=fname) }}" alt="" >
+            <p class="blog-content-p">{{post.content | safe}}</p>
+         </section>
+      </article>
+      <hr><hr>
+      <!-- Comment view -->
+    <div class="card card-comments mb-3 wow fadeIn border-0"><button type="button" class="btn btn-outline-primary btn-lg py-3" data-toggle="collapse" data-target="#demo" style="border: 2px solid rgb(2,117,216); font-size: 20px;">See responses ({{post.countcomm}})</button>
+    <div class="card-header font-weight-bold p-0 border-0"></div>
+    {%for Comments in cocomment%}
+    <div id="demo" class="collapse">
+    <div class="card-body border-0">
+                <div class="media d-block d-md-flex mt-3">
+                    <div class="media-body text-center text-md-left ml-md-3 ml-0">
+                        <h5 class="mt-0 font-weight-bold">{{Comments.name}}</h5>
+                        <p class="date" style="font-size: 12px;">{{Comments.commentdate.strftime('%b %d, %Y %I:%M %p')}}</p>
+                        <p style="font-size: 16px;">
+                          {{Comments.message}}
+                        </p>
+                    </div>
+                </div>
+            </div> </div>  {%endfor%}
+     </div>
+     <!-- Comment view end -->
+       <!--  General Comment reply -->
+      <form action="" method="POST" onsubmit="window.location.reload();">
+  <div class="form-group">
+    <h2 class="heading" style="font-size: 25px; color:rgb(2,117,216);">Write a response...</h2>
+    <div class="controls">
+      <input type="text" style=" font-size: 16px; border: 1px solid rgb(2,117,216);" id="name" class="floatLabel" placeholder="Name" name="name" required="required" >
+
+    </div>
+    <div class="controls">
+      <input type="email" style=" font-size: 16px; border: 1px solid rgb(2,117,216);"  id="email" class="floatLabel" name="emailid" placeholder="Email" required="required" >
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="controls">
+      <textarea name="message" style=" font-size: 16px; border: 1px solid rgb(2,117,216);" class="floatLabel" placeholder="Comment" id="comments" required="required" ></textarea>
+    </div>
+    <br>
+    <div class="controls">
+    	<button class="btn btn-outline-primary btn-md" type="submit">Send It</button>
+    </div>
+  </div>
+</form>
+<!-- Comment reply end -->
+   </main>
+  <div id="footer">
+    <div>Coded by <a href="https://www.linkedin.com/in/i-ashu" target="_blank" style="color: #e4cb58;text-decoration: none;">Aashu | Amrit</a></div>
+    <div>Inspired from <a href="https://www.medium.com" target="_blank" style="color: #e4cb58;text-decoration: none;">Medium</a></div>
+    <div>Made For <a href="https://www.gat.ac.in" target="_blank" style="color: #e4cb58; text-decoration: none;"> GAT</a></div>
+  </div>
+</body>
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+
+</script>
+</html>

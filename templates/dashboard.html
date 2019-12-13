@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% block body %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Page Header -->
+     <div class="overlay">
+     </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <br><br><br>
+                              {% with messages = get_flashed_messages() %}
+             {% if messages %}
+                 {% for message in messages %}
+                    <div class="alert alert-success alert-dismissible show" role="alert">
+                      <strong>{{message}}</strong>
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                 {% endfor %}
+             {% endif %}
+{% endwith %}
+              <h1 style="text-align: center; font-size: 42px; font-weight: bold; ">Admin Panel</h1>
+              <hr><hr>
+              <h1 class="subheading" style="text-align: center;">Manage Posts</h1>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content -->
+    <div class="container mx-auto">
+      <div class="row">
+        <div class="col-lg-10 col-md-10 mx-auto">
+          <h1>Dashboard Actions</h1>
+          
+           <a href="/edit/0">  <button class="btn btn-outline-primary btn-md"> Add a new post</button></a>
+           <a href="/logout">  <button class="btn btn-outline-danger btn-md"> Logout</button></a>
+<hr>
+          <h2>Upload Image</h2>
+          
+            <form action="/uploader" method="post" enctype="multipart/form-data">
+              
+<input type="file" accept="image/*" name="file1" required="required" style="border: 1px solid rgb(2,110,216); border-radius: 3px; padding-bottom: 7px; padding-top: 4px; margin-top: 1px;" >
+<button type="submit" class="btn btn-outline-primary btn-md ">Upload It</button>
+
+            </form>
+          <hr>
+<h2>Edit Posts</h2>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Sno</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Date</th>
+        <th>Views</th>
+        <th>Comments</th>
+        <th>Image</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      
+      {% for post in posts %}
+      {% set fname = 'posts_img/' + post.img_file %}
+      <tr>
+        <td>{{post.sno}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.author}}</td>
+        <td>{{post.date}}</td>
+        <td style="text-align: center;">{{post.views}}</td>
+        <td style="text-align: center;">{{post.countcomm}}</td>
+        <td><img class="table" src="{{ url_for('static', filename=fname) }}" alt="Image placeholder" style="width: 120px; height: 75px;"></td>
+        <td><a href="/edit/{{post.sno}}"><button class="btn btn-info" >Edit</button></a></td>
+        <td><a href="/delete/{{post.sno}}"><button class="btn btn-danger">Delete</button></a></td>
+      </tr>
+      
+
+      {% endfor %}
+
+    </tbody>
+  </table>
+        </div>
+      </div>
+    </div>
+{% endblock %}

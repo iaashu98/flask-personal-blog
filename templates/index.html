@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block body %}
+<br>
+<aside>
+	<br><br>
+	<form class="searchme" method="Post" action="/search">
+     <!-- <div class="search">
+      <h4 class="ml-2">Search</h4>
+      <input id="searchbox" name="searchbox" id="searchbox" placeholder="Search here..."><br>
+      <button class="btn btn-outline-primary btn-sm ml-2" value="submit"><i class="fas fa-search"></i> Search</button>  
+      </div> -->
+  </form>
+    </aside>
+	<div class="cool-card">
+			<div class="card-column-next">
+                {%for post in posts%}
+                            {% set fname = 'posts_img/' + post.img_file %}
+				<article class="card">
+			     <a href="/post/{{post.slug}}" class="card-image" style=" background-image: url('{{ url_for('static', filename=fname) }}')"></a>
+			       <section class="card-content1">
+			         
+			           <h2 class="card-body" style="font-family: sans-serif;">
+			             <a href="/post/{{post.slug}}" style="text-decoration: none">{{post.title}}</a>
+			         </h2>
+			        
+			         <p class="card-text"><small class="text">
+				            			<span style="color: black;">Written by</span>
+										<a style="color: black;font-size:12px;font-weight: bold;">{{post.author}}</a> &nbsp;<i>|| </i><span style="color: black;">&nbsp;{{post.date.strftime('%b %d, %Y')}}</span>
+										<span style="color: black;display: flex;float: right;"><i class="far fa-eye"> {{post.views}}</i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="far fa-comment"> {{post.countcomm}}</i></span>
+			           </small></p>
+			         <section class="card-text1">
+			           <p>{{post.content[0:300] | safe}}...</p>
+			           <div class="post-footer">
+			             <p><a href="/post/{{post.slug}}" class="btn text-primary btn-md border border-primary">Read more...</a></p>
+			           </div>
+			         </section>
+			       </section>
+			   </article>
+			    {%endfor%}
+	  </div><br>
+	<div class="pagination justify-content-center">
+        <a href="{{prev}}"><button class="btn btn-outline-info btn-sm mr-5">&laquo; Old Posts</button></a>
+        <a href="{{next}}"><button class="btn btn-outline-info btn-sm ml-5">New Posts &raquo;</button></a>
+    </div>
+    </div>
+    {% endblock %}
